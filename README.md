@@ -2,9 +2,10 @@
 
 # UPDATE - MACIEJ
 
-I have timeboxed this excercise so the framework can be improved.
+I have timeboxed this excercise so the framework can be improved - more implementation details can abstracted from the spec file.
 As the requirements are not availble I have made some assumptions about the expected behaviour when creating issues.
 I have added cypress testing library plus few things to run tests in CI.
+I have hooked up CircleCI to run the cypress tests in a docker container -> the build status is displayed at the top.
 
 - [x] Create automation tests
 - [x] Report bugs in the issues page -> https://github.com/magierg/cypress_test_app/issues

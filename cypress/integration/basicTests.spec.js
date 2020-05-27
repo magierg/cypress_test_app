@@ -1,7 +1,7 @@
 import users from '../support/users.json';
 import tasks from '../support/tasks.json';
 
-describe('Storybook', () => {
+describe('Tasks App', () => {
     context('Tasks', () => {
         beforeEach(() => {
             cy.visit('/login');
