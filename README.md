@@ -1,10 +1,12 @@
+[![CircleCI](https://circleci.com/gh/magierg/cypress_test_app/tree/circleci-project-setup.svg?style=svg)](https://circleci.com/gh/magierg/cypress_test_app/tree/circleci-project-setup)
+
 # UPDATE - MACIEJ
 
 As the requirements are not availble I have made some assumption about the expected behaviour when creating issues.
 
-- [x] Create tests
+- [x] Create automation tests
 - [x] Report bugs in the issues page -> https://github.com/magierg/cypress_test_app/issues
-- [ ] Create a CircleCI build
+- [x] Create a CircleCI build - the tests are failing the build
 - [ ] Add mochawesome reports
 
 
