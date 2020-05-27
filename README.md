@@ -1,12 +1,14 @@
-[![CircleCI](https://circleci.com/gh/magierg/cypress_test_app/tree/circleci-project-setup.svg?style=svg)](https://circleci.com/gh/magierg/cypress_test_app/tree/circleci-project-setup)
+[![CircleCI](https://circleci.com/gh/magierg/cypress_test_app/tree/master.svg?style=svg)](https://circleci.com/gh/magierg/cypress_test_app/tree/master)
 
 # UPDATE - MACIEJ
 
-As the requirements are not availble I have made some assumption about the expected behaviour when creating issues.
+I have timeboxed this excercise so the framework can be improved.
+As the requirements are not availble I have made some assumptions about the expected behaviour when creating issues.
+I have added cypress testing library plus few things to run tests in CI.
 
 - [x] Create automation tests
 - [x] Report bugs in the issues page -> https://github.com/magierg/cypress_test_app/issues
-- [x] Create a CircleCI build - the tests are failing the build
+- [x] Create a CircleCI build - the tests are failing the build which is expected as there are bugs.
 - [ ] Add mochawesome reports
 
 
