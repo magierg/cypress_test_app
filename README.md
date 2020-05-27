@@ -1,7 +1,9 @@
 # UPDATE - MACIEJ
 
+As the requirements are not availble I have made some assumption about the expected behaviour when creating issues.
+
 - [x] Create tests
-- [ ] Report bugs in the issue page
+- [x] Report bugs in the issues page -> https://github.com/magierg/cypress_test_app/issues
 - [ ] Create a CircleCI build
 - [ ] Add mochawesome reports
 
