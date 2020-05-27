@@ -1,3 +1,13 @@
+# UPDATE - MACIEJ
+
+As the requirements are not availble I have made some assumption about the expected behaviour when creating issues.
+
+- [x] Create tests
+- [x] Report bugs in the issues page -> https://github.com/magierg/cypress_test_app/issues
+- [ ] Create a CircleCI build
+- [ ] Add mochawesome reports
+
+
 # Task Manager - Test Automation Challenge
 
 This application is a task manager and presents a UI for the user to manage their tasks.
