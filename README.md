@@ -1,3 +1,11 @@
+# UPDATE - MACIEJ
+
+- [x] Create tests
+- [ ] Report bugs in the issue page
+- [ ] Create a CircleCI build
+- [ ] Add mochawesome reports
+
+
 # Task Manager - Test Automation Challenge
 
 This application is a task manager and presents a UI for the user to manage their tasks.
