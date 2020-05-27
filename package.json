@@ -13,7 +13,11 @@
     "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
     "format:fix": "prettier --config ./.prettierrc --write \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
     "genpage": "node ./scripts/generatePage",
-    "postgenpage": "ng lint --fix"
+    "postgenpage": "ng lint --fix",
+    "cy:run": "cypress run --browser chrome --headless",
+    "cy:ci": "start-server-and-test ci:start-server 4200 cy:run",
+    "ci:start-server": "angular-http-server --silent --path ./dist/taskManage -p 4200"
+
   },
   "private": true,
   "dependencies": {
@@ -43,12 +47,14 @@
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "~8.9.4",
+    "angular-http-server": "^1.9.0",
     "codelyzer": "^5.2.0",
     "cypress": "^4.6.0",
     "husky": "^2.7.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "scripty": "^1.9.1",
+    "start-server-and-test": "^1.11.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "tslint-config-prettier": "^1.18.0",

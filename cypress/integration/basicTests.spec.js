@@ -21,12 +21,26 @@ describe('Storybook', () => {
                 'text-decoration-line',
                 'line-through',
             );
+            cy.findByText(tasks.task1.title)
+                .parent()
+                .within($form => {
+                    cy.get('.mat-checkbox-inner-container').should(
+                        'be.checked',
+                    );
+                });
             cy.clickTask(tasks.task1);
             cy.findByText(tasks.task1).should(
                 'not.have.css',
                 'text-decoration-line',
                 'line-through',
             );
+            cy.findByText(tasks.task1.title)
+                .parent()
+                .within($form => {
+                    cy.get('.mat-checkbox-inner-container').should(
+                        'be.checked',
+                    );
+                });
         });
 
         it('can navigate to All Tasks', () => {
