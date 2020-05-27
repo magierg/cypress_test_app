@@ -1,0 +1,11 @@
+<div>
+  <mat-card fxLayout="column" class="home-card task-card" *ngFor="let task of tasks; index as i">
+    <mat-card-content fxLayout="column">
+        <mat-checkbox [checked]="task.isComplete" class="complete-checkbox" (click)="toggleDone(task)"></mat-checkbox>
+        <span [ngClass]="{'completed-task': task.isComplete}">{{task.taskTitle}}</span>
+        <mat-icon *ngIf="task.isImportant; else elseBlock" style="float:right;">star</mat-icon>
+
+        <ng-template #elseBlock><mat-icon style="float:right;">star_border</mat-icon></ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,41 @@
+.home-page {
+    background: linear-gradient();
+}
+
+.mat-form-field {
+    margin-right: 5%;
+}
+
+.home-checkbox {
+    display: block;
+}
+
+.home-card { 
+    margin: 2%;
+}
+
+.tasks-card {
+    min-height: 100px;
+}
+
+.task-card {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.complete-checkbox {
+    margin-right: 5px;
+}
+
+.completed-task {
+    text-decoration: line-through;
+}
+
+.remove-icon {
+    float: right;
+}
+
+.remove-icon:hover {
+    color: #0052a0;
+    transform: scale(1.2);
+}

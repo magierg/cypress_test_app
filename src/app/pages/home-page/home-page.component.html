@@ -1,0 +1,47 @@
+<div class="home-page" fxLayout="column">
+      <mat-card fxLayout="column" class="home-card">
+        <mat-card-content fxLayout="column">
+            <form (keyup.enter)="addTask(task)" fxLayout="column" fxLayoutAlign="space-between">
+              
+                <mat-form-field class="form-field" fxFlex="100%">
+                    <input required matInput placeholder="Task title" name="taskTitle" [(ngModel)]="task.taskTitle" type="text"/>
+                </mat-form-field>
+
+                <mat-form-field class="form-field">
+                  <input matInput placeholder="Task description" name="taskDesc" [(ngModel)]="task.taskDesc" type="text"/>
+              </mat-form-field>
+
+              <mat-form-field class="form-field">
+                <input name="taskDate" matInput [matDatepicker]="taskDatePicker" placeholder="Task due date" [(ngModel)]="task.taskDate" [min]="minDate" disabled>
+                <mat-datepicker-toggle matSuffix [for]="taskDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #taskDatePicker disabled="false"></mat-datepicker>
+            </mat-form-field>
+
+            <mat-checkbox class="home-checkbox" name="isImportant" [(ngModel)]="task.isImportant">Important</mat-checkbox>
+            </form>
+            <mat-error [textContent]="errorMessage"></mat-error>
+        </mat-card-content>
+        <mat-card-actions>
+            <button id="addTask" mat-raised-button color="primary"
+                    class="form-field" (click)="addTask(task)" type="submit">
+                Add
+            </button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card fxLayout="column" class="home-card task-card" *ngFor="let task of tasks; index as i">
+      <mat-card-content fxLayout="column">
+        <mat-checkbox [checked]="task.isComplete" class="complete-checkbox" (click)="toggleDone(task)"></mat-checkbox>
+        <span [ngClass]="{'completed-task': task.isComplete}">{{task.taskTitle}}</span>
+        <span style="margin-left: 10%;" *ngIf="task.taskDate">
+          <mat-icon style="vertical-align: bottom;">calendar_today</mat-icon>
+          {{task.taskDate | date}}
+        </span>
+        <mat-icon (click)="deleteTask(task)" class="remove-icon">close</mat-icon>
+        <mat-icon *ngIf="task.isImportant; else elseBlock" style="float:right;">star</mat-icon>
+
+        <ng-template #elseBlock><mat-icon style="float:right;">star_border</mat-icon></ng-template>
+
+      </mat-card-content>
+    </mat-card>
+</div>
