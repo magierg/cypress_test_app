@@ -12,7 +12,6 @@ describe('Tasks App', () => {
             addTask(tasks.task1);
             removeTask(tasks.task1);
         });
-
         it('can mark/unmark task', () => {
             addTask(tasks.task1);
             cy.log('Mark task');
@@ -52,7 +51,6 @@ describe('Tasks App', () => {
                 .contains('All Tasks')
                 .should('be.visible');
         });
-
         it('can navigate to Important Tasks page', () => {
             cy.visit('/nav/important-tasks');
             cy.get('.mat-elevation-z6')
