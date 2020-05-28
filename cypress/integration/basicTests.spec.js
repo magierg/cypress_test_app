@@ -1,21 +1,22 @@
-import users from '../support/users.json';
-import tasks from '../support/tasks.json';
+import users from '../fixtures/users.json';
+import tasks from '../fixtures/tasks.json';
+import { addTask, removeTask, markTask } from './helpers/tasksUtils';
 
 describe('Tasks App', () => {
-    context('Tasks', () => {
-        beforeEach(() => {
-            cy.visit('/login');
-            cy.loginAs(users.user1);
-        });
-
+    beforeEach(() => {
+        cy.visit('/login');
+        cy.loginAs(users.user1);
+    });
+    context('Task actions', () => {
         it('can add/remove task', () => {
-            cy.addTask(tasks.task1);
-            cy.removeTask(tasks.task1);
+            addTask(tasks.task1);
+            removeTask(tasks.task1);
         });
 
         it('can mark/unmark task', () => {
-            cy.addTask(tasks.task1);
-            cy.clickTask(tasks.task1);
+            addTask(tasks.task1);
+            cy.log('Mark task');
+            markTask(tasks.task1);
             cy.findByText(tasks.task1.title).should(
                 'have.css',
                 'text-decoration-line',
@@ -28,7 +29,8 @@ describe('Tasks App', () => {
                         'be.checked',
                     );
                 });
-            cy.clickTask(tasks.task1);
+            cy.log('Unmark task');
+            markTask(tasks.task1);
             cy.findByText(tasks.task1).should(
                 'not.have.css',
                 'text-decoration-line',
@@ -42,15 +44,16 @@ describe('Tasks App', () => {
                     );
                 });
         });
-
-        it('can navigate to All Tasks', () => {
+    });
+    context('Pages', () => {
+        it('can navigate to All Tasks psge', () => {
             cy.visit('/nav/all-tasks');
             cy.get('.mat-elevation-z6')
                 .contains('All Tasks')
                 .should('be.visible');
         });
 
-        it('can navigate to Important Tasks', () => {
+        it('can navigate to Important Tasks page', () => {
             cy.visit('/nav/important-tasks');
             cy.get('.mat-elevation-z6')
                 .contains('Important Tasks')

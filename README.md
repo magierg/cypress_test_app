@@ -11,6 +11,7 @@ I have hooked up CircleCI to run the cypress tests in a docker container -> the 
 - [x] Report bugs in the issues page -> https://github.com/magierg/cypress_test_app/issues
 - [x] Create a CircleCI build - the tests are failing the build which is expected as there are bugs.
 - [ ] Add mochawesome reports
+- [ ] Convert tests to TS
 
 
 # Task Manager - Test Automation Challenge

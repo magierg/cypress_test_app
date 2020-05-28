@@ -33,29 +33,3 @@ Cypress.Commands.add('loginAs', user => {
         .contains('My day')
         .should('be.visible');
 });
-
-Cypress.Commands.add('addTask', task => {
-    cy.findByPlaceholderText('Task title').type(task.title);
-    cy.findByText('Add').click();
-    cy.findByText(task.title).should('be.visible');
-});
-
-Cypress.Commands.add('removeTask', task => {
-    cy.findByText(task.title).should('exist');
-    cy.findByText(task.title)
-        .parent()
-        .within($form => {
-            cy.get('.remove-icon').click();
-        });
-    cy.get('.mat-card-content')
-        .contains(task.title)
-        .should('not.be.visible');
-});
-Cypress.Commands.add('clickTask', task => {
-    cy.findByText(task.title).should('exist');
-    cy.findByText(task.title)
-        .parent()
-        .within($form => {
-            cy.get('.mat-checkbox-inner-container').click();
-        });
-});
